@@ -1,4 +1,6 @@
-import * as styles from "./RuleNode.css";
+import { useMemo } from "react";
+
+import Node from "../Node";
 
 type Props = {
   name: string;
@@ -13,40 +15,44 @@ type Props = {
 
 export default function RuleNode({
   name,
-  action,
   priority,
+  action,
   domain,
   status = "NORMAL",
 }: Props) {
-  return (
-    <div className={styles.RuleNode({ status })}>
-      <div className={styles.Header}>
-        <div className={styles.Title}>Rule | {name}</div>
-      </div>
-      <div className={styles.Attribute}>
-        <RuleAttribute title="Priority" value={priority} />
-        <RuleAttribute title="Action" value={action} />
-      </div>
-      <div className={styles.Domain}>
-        <div className={styles.Title}>Domain List | {domain.name}</div>
-        <div>
-          <span className={styles.DomainCount}>{domain.count}</span> domains
-        </div>
-      </div>
-    </div>
+  const attributes = useMemo(
+    () => [
+      {
+        title: "Priority",
+        value: priority,
+      },
+      {
+        title: "Action",
+        value: action,
+      },
+    ],
+    [priority, action],
   );
-}
 
-type RuleAttributeProps = {
-  title: string;
-  value: string | number;
-};
+  const references = useMemo(
+    () => ({
+      title: `Domain List | ${domain.name}`,
+      contents: [
+        {
+          content: domain.count,
+          suffix: "domains",
+        },
+      ],
+    }),
+    [domain],
+  );
 
-function RuleAttribute({ title, value }: RuleAttributeProps) {
   return (
-    <div>
-      <div className={styles.AttributeTitle}>{title}</div>
-      <div className={styles.AttributeValue}>{value}</div>
-    </div>
+    <Node
+      title={`Rule | ${name}`}
+      attributes={attributes}
+      reference={references}
+      status={status}
+    />
   );
 }
