@@ -7,7 +7,7 @@ type Props = {
   status?: "NORMAL" | "ALLOW" | "DENY" | "PASS";
 };
 
-export default function RuleGroupNode({ name, status }: Props) {
+export default function RuleGroupNode({ name, status = "NORMAL" }: Props) {
   const attributes = useMemo(
     () => [
       {
