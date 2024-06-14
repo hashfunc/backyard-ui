@@ -3,11 +3,15 @@ import { useMemo } from "react";
 import Node from "../Node";
 
 type Props = {
-  name: string;
-  status?: "NORMAL" | "ALLOW" | "DENY" | "PASS";
+  data: {
+    name: string;
+    status?: "NORMAL" | "ALLOW" | "DENY" | "PASS";
+  };
 };
 
-export default function RuleGroupNode({ name, status = "NORMAL" }: Props) {
+export default function RuleGroupNode({
+  data: { name, status = "NORMAL" },
+}: Props) {
   const attributes = useMemo(
     () => [
       {
