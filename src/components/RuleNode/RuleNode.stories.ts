@@ -16,15 +16,17 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    name: "Name of rule",
-    action: "ALLOW",
-    priority: 100,
+    data: {
+      name: "Name of rule",
+      action: "ALLOW",
+      priority: 100,
 
-    domain: {
-      name: "Name of domain list",
-      count: 25,
+      domain: {
+        name: "Name of domain list",
+        count: 25,
+      },
+
+      status: "NORMAL",
     },
-
-    status: "NORMAL",
   },
 };

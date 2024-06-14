@@ -3,22 +3,20 @@ import { useMemo } from "react";
 import Node from "../Node";
 
 type Props = {
-  name: string;
-  priority: number;
-  action: "ALLOW" | "ALERT" | "DENY";
-  domain: {
+  data: {
     name: string;
-    count: number;
+    priority: number;
+    action: "ALLOW" | "ALERT" | "DENY";
+    domain: {
+      name: string;
+      count: number;
+    };
+    status?: "NORMAL" | "ALLOW" | "DENY" | "PASS";
   };
-  status?: "NORMAL" | "ALLOW" | "DENY" | "PASS";
 };
 
 export default function RuleNode({
-  name,
-  priority,
-  action,
-  domain,
-  status = "NORMAL",
+  data: { name, priority, action, domain, status = "NORMAL" },
 }: Props) {
   const attributes = useMemo(
     () => [
