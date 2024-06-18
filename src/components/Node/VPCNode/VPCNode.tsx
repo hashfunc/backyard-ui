@@ -1,21 +1,12 @@
-import { useMemo } from "react";
+import { Handle, Position } from "reactflow";
 
-import NodeBase from "../NodeBase";
+import VPC, { type Props } from "./VPC";
 
-type Props = {
-  data: { name: string };
-};
-
-export default function VPCNode({ data: { name } }: Props) {
-  const attributes = useMemo(
-    () => [
-      {
-        title: "Name",
-        value: name,
-      },
-    ],
-    [name],
+export default function VPCNode({ data }: Props) {
+  return (
+    <>
+      <VPC data={data} />
+      <Handle type="source" position={Position.Bottom} />
+    </>
   );
-
-  return <NodeBase title={"VPC"} attributes={attributes} />;
 }

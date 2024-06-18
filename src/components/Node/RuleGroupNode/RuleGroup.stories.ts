@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import VPCNode from "./VPCNode.tsx";
+import RuleGroup from "./RuleGroup";
 
 const meta = {
-  title: "Node/VPCNode",
-  component: VPCNode,
+  title: "Node/RuleGroup",
+  component: RuleGroup,
   parameters: {
     layout: "centered",
   },
-} satisfies Meta<typeof VPCNode>;
+} satisfies Meta<typeof RuleGroup>;
 
 export default meta;
 
@@ -17,7 +17,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     data: {
-      name: "Name of VPC",
+      name: "Name of rule group",
     },
   },
 };

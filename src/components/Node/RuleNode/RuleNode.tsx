@@ -1,56 +1,13 @@
-import { useMemo } from "react";
+import { Handle, Position } from "reactflow";
 
-import NodeBase from "../NodeBase";
+import Rule, { type Props } from "./Rule";
 
-type Props = {
-  data: {
-    name: string;
-    priority: number;
-    action: "ALLOW" | "ALERT" | "DENY";
-    domain: {
-      name: string;
-      count: number;
-    };
-    status?: "NORMAL" | "ALLOW" | "DENY" | "PASS";
-  };
-};
-
-export default function RuleNode({
-  data: { name, priority, action, domain, status = "NORMAL" },
-}: Props) {
-  const attributes = useMemo(
-    () => [
-      {
-        title: "Priority",
-        value: priority,
-      },
-      {
-        title: "Action",
-        value: action,
-      },
-    ],
-    [priority, action],
-  );
-
-  const references = useMemo(
-    () => ({
-      title: `Domain List | ${domain.name}`,
-      contents: [
-        {
-          content: domain.count,
-          suffix: "domains",
-        },
-      ],
-    }),
-    [domain],
-  );
-
+export default function RuleNode({ data }: Props) {
   return (
-    <NodeBase
-      title={`Rule | ${name}`}
-      attributes={attributes}
-      reference={references}
-      status={status}
-    />
+    <>
+      <Rule data={data} />
+      <Handle type="target" position={Position.Top} />
+      <Handle type="source" position={Position.Bottom} />
+    </>
   );
 }

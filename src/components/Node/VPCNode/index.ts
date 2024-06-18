@@ -1,1 +1,1 @@
-export { default } from "./VPCNode.tsx";
+export { default } from "./VPC";

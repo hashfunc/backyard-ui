@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import NodeBase from "./NodeBase.tsx";
+import NodeBase from "./NodeBase";
 
 const meta = {
   title: "Node/NodeBase",

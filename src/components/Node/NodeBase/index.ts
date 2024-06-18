@@ -1,1 +1,1 @@
-export { default } from "./NodeBase.tsx";
+export { default } from "./NodeBase";
