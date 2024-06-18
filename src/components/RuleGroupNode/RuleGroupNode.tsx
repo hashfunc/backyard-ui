@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-import { Handle, Position } from "reactflow";
 
 import Node from "../Node";
 
@@ -23,10 +22,5 @@ export default function RuleGroupNode({
     [name],
   );
 
-  return (
-    <>
-      <Node title="Rule Group" attributes={attributes} status={status} />
-      <Handle type="source" position={Position.Bottom} />
-    </>
-  );
+  return <Node title="Rule Group" attributes={attributes} status={status} />;
 }

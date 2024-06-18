@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-import { Handle, Position } from "reactflow";
 
 import Node from "../Node";
 
@@ -47,15 +46,11 @@ export default function RuleNode({
   );
 
   return (
-    <>
-      <Node
-        title={`Rule | ${name}`}
-        attributes={attributes}
-        reference={references}
-        status={status}
-      />
-      <Handle type="target" position={Position.Top} />
-      <Handle type="source" position={Position.Bottom} />
-    </>
+    <Node
+      title={`Rule | ${name}`}
+      attributes={attributes}
+      reference={references}
+      status={status}
+    />
   );
 }
