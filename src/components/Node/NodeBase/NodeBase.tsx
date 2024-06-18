@@ -1,4 +1,4 @@
-import * as styles from "./NodeBase.css.ts";
+import * as styles from "./NodeBase.css";
 
 type Props = {
   title: string;

@@ -1,28 +1,13 @@
-import { useMemo } from "react";
+import { Handle, Position } from "reactflow";
 
-import NodeBase from "../NodeBase";
+import RuleGroup, { type Props } from "./RuleGroup";
 
-type Props = {
-  data: {
-    name: string;
-    status?: "NORMAL" | "ALLOW" | "DENY" | "PASS";
-  };
-};
-
-export default function RuleGroupNode({
-  data: { name, status = "NORMAL" },
-}: Props) {
-  const attributes = useMemo(
-    () => [
-      {
-        title: "Name",
-        value: name,
-      },
-    ],
-    [name],
-  );
-
+export default function RuleGroupNode({ data }: Props) {
   return (
-    <NodeBase title="Rule Group" attributes={attributes} status={status} />
+    <>
+      <RuleGroup data={data} />
+      <Handle type="target" position={Position.Top} />
+      <Handle type="source" position={Position.Bottom} />
+    </>
   );
 }

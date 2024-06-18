@@ -1,1 +1,1 @@
-export { default } from "./RuleNode.tsx";
+export { default } from "./RuleNode";
