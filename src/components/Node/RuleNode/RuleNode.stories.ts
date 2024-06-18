@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import RuleNode from "./RuleNode";
+import RuleNode from "./RuleNode.tsx";
 
 const meta = {
-  title: "RuleNode",
+  title: "Node/RuleNode",
   component: RuleNode,
   parameters: {
     layout: "centered",

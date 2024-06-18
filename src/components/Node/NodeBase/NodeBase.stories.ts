@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import Node from "./Node";
+import NodeBase from "./NodeBase.tsx";
 
 const meta = {
-  title: "Node",
-  component: Node,
+  title: "Node/NodeBase",
+  component: NodeBase,
   parameters: {
     layout: "centered",
   },
-} satisfies Meta<typeof Node>;
+} satisfies Meta<typeof NodeBase>;
 
 export default meta;
 
@@ -16,7 +16,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    title: "Node | Name of node",
+    title: "NodeBase | Name of node",
     attributes: [
       {
         title: "title",
