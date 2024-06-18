@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import Node from "../Node";
+import NodeBase from "../NodeBase";
 
 type Props = {
   data: { name: string };
@@ -17,5 +17,5 @@ export default function VPCNode({ data: { name } }: Props) {
     [name],
   );
 
-  return <Node title={"VPC"} attributes={attributes} />;
+  return <NodeBase title={"VPC"} attributes={attributes} />;
 }

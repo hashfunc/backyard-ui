@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import Node from "../Node";
+import NodeBase from "../NodeBase";
 
 type Props = {
   data: {
@@ -22,5 +22,7 @@ export default function RuleGroupNode({
     [name],
   );
 
-  return <Node title="Rule Group" attributes={attributes} status={status} />;
+  return (
+    <NodeBase title="Rule Group" attributes={attributes} status={status} />
+  );
 }

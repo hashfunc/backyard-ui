@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import RuleGroupNode from "./RuleGroupNode";
+import RuleGroupNode from "./RuleGroupNode.tsx";
 
 const meta = {
-  title: "RuleGroupNode",
+  title: "Node/RuleGroupNode",
   component: RuleGroupNode,
   parameters: {
     layout: "centered",

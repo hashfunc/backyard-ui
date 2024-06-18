@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import VPCNode from "./VPCNode";
+import VPCNode from "./VPCNode.tsx";
 
 const meta = {
-  title: "VPCNode",
+  title: "Node/VPCNode",
   component: VPCNode,
   parameters: {
     layout: "centered",

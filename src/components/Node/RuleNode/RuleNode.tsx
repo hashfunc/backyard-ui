@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import Node from "../Node";
+import NodeBase from "../NodeBase";
 
 type Props = {
   data: {
@@ -46,7 +46,7 @@ export default function RuleNode({
   );
 
   return (
-    <Node
+    <NodeBase
       title={`Rule | ${name}`}
       attributes={attributes}
       reference={references}

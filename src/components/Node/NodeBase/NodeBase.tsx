@@ -1,4 +1,4 @@
-import * as styles from "./Node.css";
+import * as styles from "./NodeBase.css.ts";
 
 type Props = {
   title: string;
@@ -20,14 +20,14 @@ type TReferenceContent = {
   suffix?: string;
 };
 
-export default function Node({
+export default function NodeBase({
   title,
   attributes,
   reference,
   status = "NORMAL",
 }: Props) {
   return (
-    <div className={styles.Node({ status })}>
+    <div className={styles.NodeBase({ status })}>
       <div className={styles.Header}>{title}</div>
       <div className={styles.Attribute}>
         {attributes.map(({ title, value }: TAttribute) => {

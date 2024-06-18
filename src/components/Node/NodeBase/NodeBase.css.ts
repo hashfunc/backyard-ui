@@ -1,7 +1,7 @@
 import { style } from "@vanilla-extract/css";
 import { recipe } from "@vanilla-extract/recipes";
 
-export const Node = recipe({
+export const NodeBase = recipe({
   base: {
     boxSizing: "border-box",
     width: 300,
