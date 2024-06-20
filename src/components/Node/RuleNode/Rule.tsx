@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import NodeBase from "../NodeBase";
+import NodeBase from "components/Node/NodeBase";
 
 export type Props = {
   data: {
