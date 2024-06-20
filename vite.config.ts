@@ -5,4 +5,10 @@ import { defineConfig } from "vite";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), vanillaExtractPlugin()],
+  resolve: {
+    alias: {
+      src: "/src",
+      components: "/src/components",
+    },
+  },
 });
