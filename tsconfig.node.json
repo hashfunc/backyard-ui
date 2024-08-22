@@ -1,13 +1,12 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "composite": true,
     "module": "ESNext",
     "moduleResolution": "bundler",
     "paths": {
-      "src/*": ["*"],
-      "components/*": ["components/*"]
+      "@/*": ["./src/*"]
     },
     "skipLibCheck": true,
     "strict": true

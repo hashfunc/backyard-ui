@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowImportingTsExtensions": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "isolatedModules": true,
     "jsx": "react-jsx",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
@@ -12,8 +12,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "paths": {
-      "src/*": ["*"],
-      "components/*": ["components/*"]
+      "@/*": ["./src/*"]
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,
