@@ -7,7 +7,9 @@ type Props = {
 export default function Layout({ children }: Props) {
   return (
     <div className={styles.Layout}>
-      {children}
+      <div className={styles.LayoutContent}>
+        {children}
+      </div>
     </div>
   );
 }
